@@ -1,0 +1,532 @@
+:root {
+    --primary-color: #00b4d8;
+    --dark-color: #333;
+    --light-bg: #f4f4f4;
+    --footer-bg: #0a0a23;
+    --footer-bar: #0077b6;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    background-color: white;
+}
+
+/* ---------------- General Layout ---------------- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,.65); 
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 8px 0;
+    height: 80px;
+}
+
+
+
+
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; /* make sure it fills navbar */
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-family: 'arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logo img {
+    max-height: 150px;
+    height: auto;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: bold;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0096c7;
+}
+
+/* ---------------- Hero Section (Home Page Only) ---------------- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.btn-hero {
+    margin-top: 20px;
+}
+
+/* ---------------- About Us Section (Home Page) ---------------- */
+.about-section {
+    background-color: var(--light-bg);
+    padding: 100px 0 60px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;    
+    align-items: center;
+    gap: 40px;
+}
+
+.about-content .text, 
+.about-content .image {
+    flex: 1;
+}
+
+.about-content .text h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-content .text h3 {
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.about-content .text p {
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.about-content .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.about-content .btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.about-content .image img,
+.about-content .image video {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+/* ---------------- Our Values Section ---------------- */
+.values-section {
+    background-color: #e9f5fb;
+    padding: 100px 0 60px;
+}
+
+.values-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.text-list, 
+.image-split {
+    flex: 1;
+}
+
+.image-split video {
+    width: 100%;
+    border-radius: 15px; 
+}
+
+.text-list .item {
+    margin-bottom: 30px;
+}
+
+.text-list .item h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.text-list .item p {
+    color: var(--dark-color);
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ---------------- Services Section ---------------- */--- */
+.services-section {
+    background-color: var(--light-bg);
+    padding: 100px 0 60px;
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.services-content .text, 
+.services-content .image {
+    flex: 1;
+}
+
+.services-content .text h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.services-content .text h3 {
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.services-content .text p {
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.services-video {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* ---------------- Contact Section (Home Page) ---------------- */
+.contact-section {
+    background-color: var(--light-bg);
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact-content h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+/* ---------------- Contact us  ---------------- */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    align-self: center;
+    margin-top: 10px;
+    border: none; 
+    outline: none; 
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-family: 'arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+
+
+.contact-form button:hover {
+    background-color: #0096c7;
+}
+/* === mobile-nav additions === */
+.nav-toggle{
+    display:none;                         /* hidden on desktop */
+    flex-direction:column;
+    justify-content:space-between;
+    width:26px; height:20px;
+    background:transparent;
+    border:none; outline:0; cursor:pointer;
+  }
+  .nav-toggle .bar{
+    width:100%; height:3px; border-radius:2px;
+    background:var(--dark-color);
+  }
+  
+  /* desktop keeps the same look */
+  @media (max-width:768px){
+    /* show the hamburger, hide the right-side CTA so it doesn’t crowd */
+    .nav-toggle{display:flex;}
+    .contact-btn{display:none;}
+  
+    /* stack the whole header */
+    .navbar-content{flex-wrap:wrap; align-items:flex-start;}
+  
+    /* menu – start closed */
+    .nav-menu{width:100%; display:none;}
+    .nav-menu ul{flex-direction:column; gap:0;}
+    .nav-menu li{border-top:1px solid #e8e8e8;}
+    .nav-menu li a{display:block; padding:15px;}
+  
+    /* when JS adds .open */
+    .nav-menu.open{display:block;}
+  }
+  
+/* ---------------- About and Values Pages Specific ---------------- */
+.about-page-section,
+.values-page-section {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    min-height: 70vh;
+    text-align: center;
+}
+
+.about-page-section h1,
+.values-page-section h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-page-section p,
+.values-page-section p {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ---------------- Footer Section ---------------- */
+.footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-col p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    background-color: var(--footer-bar);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* ---------------- Mobile Responsive ---------------- */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-content,
+    .values-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content .text, 
+    .about-content .image, 
+    .values-content .text-list, 
+    .values-content .image-split {
+        flex: none;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
